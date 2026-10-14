@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex,nofollow">
+<title>10月16日の打ち合わせ準備シート</title>
+<style>
+:root{--ink:#17364a;--muted:#4f6773;--line:#d3e3ec;--sky:#e4f3fb;--sea:#1f86b5;--deep:#0f5a8a;--paper:#fdfcf8}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#e4f3fb 0,#f7fbfd 380px,var(--paper) 900px);color:var(--ink);font:17px/1.85 'Yu Gothic','Hiragino Sans',Meiryo,sans-serif}
+main{max-width:860px;margin:auto;padding:30px 16px 90px}
+header,section{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 24px;margin-bottom:18px}
+header{border-top:6px solid var(--sea)}
+.tag{color:var(--sea);font-weight:bold;font-size:14px;letter-spacing:.06em}
+h1{font-family:'Yu Mincho','Hiragino Mincho ProN',serif;font-weight:600;font-size:30px;line-height:1.5;margin:8px 0 14px}
+h2{font-family:'Yu Mincho','Hiragino Mincho ProN',serif;font-weight:600;font-size:22px;line-height:1.55;margin:0 0 8px;display:flex;gap:12px}
+h2 .n{color:var(--sea);font-family:'Yu Gothic',sans-serif;font-size:18px;padding-top:3px;min-width:28px}
+.note{background:var(--sky);border-radius:10px;padding:16px 18px;margin:14px 0}
+.muted{font-size:15px;color:var(--muted)}
+.agenda{margin:10px 0 0;padding:0;list-style:none}
+.agenda li{display:flex;gap:14px;padding:10px 0;border-bottom:1px solid var(--line)}
+.agenda li b{color:var(--deep);min-width:5.5em}
+.sub{margin:18px 0 0}
+.sub>p{font-weight:bold;margin:0 0 8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{position:relative;display:inline-flex;align-items:center;min-height:48px;padding:8px 18px;border:1px solid #9cc7de;border-radius:30px;background:#fff;cursor:pointer;font-size:16px;line-height:1.4}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips label:has(input:checked){background:var(--deep);border-color:var(--deep);color:#fff}
+.chips label:has(input:focus-visible){outline:3px solid #8fd0ef;outline-offset:2px}
+textarea,input[type=text]{width:100%;margin-top:10px;padding:12px 14px;border:1px solid #9cc7de;border-radius:10px;font:inherit;font-size:16px;line-height:1.65}
+textarea{min-height:96px;resize:vertical}
+textarea:focus,input[type=text]:focus{outline:3px solid #8fd0ef;outline-offset:1px}
+.quote{border-left:3px solid var(--sea);padding:6px 0 6px 16px;margin:10px 0;font-family:'Yu Mincho',serif;font-size:17px}
+.quote p{margin:4px 0}
+a{color:var(--deep)}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0}
+button{min-height:52px;padding:12px 22px;border:1px solid var(--deep);border-radius:30px;background:var(--deep);color:#fff;font:inherit;font-weight:bold;cursor:pointer}
+button.secondary{background:#fff;color:var(--deep)}
+#reply{min-height:260px;font-size:14px}
+.progress{position:sticky;top:0;z-index:2;background:rgba(253,252,248,.95);border:1px solid var(--line);border-radius:30px;padding:8px 18px;margin:0 0 16px;font-weight:bold;color:var(--deep);text-align:center}
+footer{text-align:center;color:var(--muted);font-size:14px}
+@media(max-width:600px){h1{font-size:25px}h2{font-size:19.5px}header,section{padding:22px 16px}.chips label{font-size:15px;padding:8px 14px}}
+</style></head><body><main>
+
+<header>
+<div class="tag">赤澤さんへ · 2026年10月14日</div>
+<h1>10月16日（金）<br>打ち合わせの準備シート</h1>
+<p>ホームページの確認用ページができました。16日は<strong>10:30から1時間</strong>で、内容を決めきりたいと思っています。</p>
+<div class="note"><strong>① 確認用ページを見る → ② 下の質問を選ぶだけ → ③ 回答をコピーしてMessengerで送る</strong><br>ほとんどがボタンを選ぶだけです。迷うところは「当日相談」で大丈夫です。全部そろっていなくても、途中のままお送りください。</div>
+<p><a href="index.html" target="_blank" rel="noopener">ホームページの確認用ページを開く →</a></p>
+<p class="muted">確認用のページで、まだ公開していません。お申し込みボタンなどはまだ動きません。</p>
+</header>
+
+<section>
+<h2>16日の進め方（1時間）</h2>
+<ul class="agenda">
+<li><b>10:30〜</b><span>ホームページを一緒に見る（15分）</span></li>
+<li><b>10:45〜</b><span>このシートの回答をもとに決める（30分）</span></li>
+<li><b>11:15〜</b><span>撮影と、これからの日程（15分）</span></li>
+</ul>
+<p class="muted">前もってお答えいただけると、当日は確認だけで済み、時間どおりに終われます。</p>
+</section>
+
+<div class="progress" id="progress" role="status">回答 0 / 0</div>
+<div id="items"></div>
+
+<section>
+<h2>その他、気になること</h2>
+<textarea id="extra" placeholder="見た目の希望、文章で直したいところなど、なんでもどうぞ（空欄で大丈夫です）"></textarea>
+</section>
+
+<section id="send">
+<h2>回答をMessengerで送る</h2>
+<p>ボタンを押すと、回答をまとめてコピーします。稲田とのMessengerに貼り付けて送ってください。写真や資料のファイルは、Messengerで別にお送りください。</p>
+<div class="btns"><button type="button" id="copy">回答をコピー</button><button type="button" id="download" class="secondary">テキストで保存</button></div>
+<p id="status" role="status" aria-live="polite"></p>
+<label for="reply" class="muted">コピーされる文章</label>
+<textarea id="reply" readonly></textarea>
+<p class="muted">回答はこの端末のブラウザの中に自動で保存されます。このページから回答が送信されることはありません。</p>
+<button type="button" id="clear" class="secondary">このブラウザの回答を消す</button>
+</section>
+<footer>稲田作成 · 赤澤久美子さんホームページの打ち合わせ準備</footer>
+</main>
+
+<script id="formData" type="application/json">
+[
+ {"title":"トップの写真","lead":"確認用ページの上のボタンで切り替えられます。","subs":[
+   {"q":"どれがいいですか","opts":["夏の雲","夏の海辺","エメラルドの海","当日相談"]}]},
+ {"title":"「こんなことありませんか」の4行","lead":"トップページの2つ目の欄です。お客様の実感に近いかを見てください。",
+  "quote":["毎日たくさんの判断をしているのに、自分のことは後回しになっている。","立場上、まわりに迷いや弱音を話しにくい。","次に何をしたいのか、言葉にしようとすると止まってしまう。","一人で考えていると、同じところを回ってしまう。"],
+  "subs":[{"q":"この4行は","opts":["このままでよい","少し直したい","当日相談"],"text":"直したいところ、足したい言葉があれば"}]},
+ {"title":"経歴と資格","lead":"プロフィールのページに載せます。箇条書きで大丈夫です。","subs":[
+   {"q":"どうしますか","opts":["下に書く","資料をMessengerで送る","当日話す"],"text":"資格の正式な名前、これまでのお仕事、スポーツでの経験など"}]},
+ {"title":"赤澤さんのお写真","lead":"今はレジェンドスマイルのホームページのプロフィール写真を、仮でお借りしています。","subs":[
+   {"q":"撮影までの間、この写真を使ってよいですか","opts":["使ってよい","撮影した写真で出したい","当日相談"]},
+   {"q":"手持ちで使ってほしい写真はありますか","opts":["ある（Messengerで送る）","ない","当日相談"]}]},
+ {"title":"写真と紹介動画の撮影","lead":"重徳さんと撮影の打ち合わせをして、1日2〜3時間ほどで撮る予定です。","subs":[
+   {"q":"日程の候補","opts":["下に書く","当日決める"],"text":"撮影できそうな日（11月）、場所の希望があれば"}]},
+ {"title":"診断の見本","lead":"ホームページで、診断で何が分かるかを見せたいと考えています。","subs":[
+   {"q":"お客様に使うのは","opts":["105問の診断","25問の簡易版","当日相談"]},
+   {"q":"名前を消した診断書の見本を、ホームページに載せてよいですか","opts":["よい","載せない","当日相談"]}]},
+ {"title":"お客様の声","lead":"ご本人の許可をいただいた方だけ載せます。","subs":[
+   {"q":"載せてもよさそうな方は","opts":["いる","今はいない","当日相談"],"text":"いる場合、どんな方か（お名前はまだ不要です）"}]},
+ {"title":"半年コースのグループ","lead":"毎月のグループ振り返り（90分）についてです。","subs":[
+   {"q":"1グループの人数","opts":["3人まで","4人まで","5〜6人","当日相談"]},
+   {"q":"欠席したときは","opts":["別の日に振替","録画を見てもらう","振替なし","当日相談"]}]},
+ {"title":"半年コースのお支払い方法","lead":"リザストの「契約サービス」で、毎月の自動払い（PayPal）・銀行振込・一括払いのどれにも設定できます。一括と毎月の両方を用意して、お客様に選んでもらうこともできます。","subs":[
+   {"q":"どうしますか","opts":["毎月22,000円×6回","一括132,000円","両方から選べる","当日相談"]},
+   {"q":"一括の場合、割引はしますか","opts":["しない","する","当日相談"],"text":"割引する場合の金額など"}]},
+ {"title":"キャンセル・日程変更","lead":"ホームページと申し込みページに載せる決まりです。たたき台を書きました。","subs":[
+   {"q":"日程変更：前日までのご連絡なら、1回まで無料で変更できる","opts":["この案でよい","変えたい","当日相談"]},
+   {"q":"初回のキャンセル：診断書の手配前は全額返金、手配後は手配費用を差し引いて返金、解説のあとは返金なし","opts":["この案でよい","変えたい","当日相談"]},
+   {"q":"協会への診断書の手配費用は、1件いくらですか","opts":["下に書く","当日話す"],"text":"金額、または「手配後は返ってこない」など"}]},
+ {"title":"ネット販売に必要な表記","lead":"ネットで申し込みを受けるときに必ず載せる「特定商取引法に基づく表記」です。","subs":[
+   {"q":"住所と電話番号は","opts":["そのまま載せる","「ご請求があればお知らせします」と書く","当日相談"]}]}
+]
+</script>
+<script>
+(function(){
+var items=JSON.parse(document.getElementById('formData').textContent),key='akazawa-junbi-20261016-v1',saved={},ok=true;
+try{saved=JSON.parse(localStorage.getItem(key)||'{}')}catch(e){ok=false}
+var box=document.getElementById('items'),esc=function(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+var html='',total=0;
+items.forEach(function(it,i){
+  html+='<section><h2><span class="n">'+String(i+1).padStart(2,'0')+'</span><span>'+esc(it.title)+'</span></h2>';
+  if(it.lead)html+='<p class="muted">'+esc(it.lead)+'</p>';
+  if(it.quote)html+='<div class="quote">'+it.quote.map(function(q){return '<p>'+esc(q)+'</p>'}).join('')+'</div>';
+  it.subs.forEach(function(s,j){total++;var name='q'+i+'_'+j;
+    html+='<div class="sub" role="radiogroup" aria-label="'+esc(s.q)+'"><p>'+esc(s.q)+'</p><div class="chips">'+s.opts.map(function(o){return '<label><input type="radio" name="'+name+'" value="'+esc(o)+'">'+esc(o)+'</label>'}).join('')+'</div>';
+    if(s.text)html+='<textarea data-t="'+name+'" placeholder="'+esc(s.text)+'"></textarea>';
+    html+='</div>';});
+  html+='</section>';});
+box.innerHTML=html;
+document.querySelectorAll('input[type=radio]').forEach(function(r){if(saved[r.name]===r.value)r.checked=true});
+document.querySelectorAll('textarea[data-t]').forEach(function(t){if(typeof saved['t_'+t.dataset.t]==='string')t.value=saved['t_'+t.dataset.t]});
+var extra=document.getElementById('extra');if(typeof saved.extra==='string')extra.value=saved.extra;
+var reply=document.getElementById('reply'),status=document.getElementById('status'),prog=document.getElementById('progress');
+function val(name){var c=document.querySelector('input[name="'+name+'"]:checked');return c?c.value:''}
+function txt(name){var t=document.querySelector('textarea[data-t="'+name+'"]');return t?t.value.trim():''}
+function compose(){var out=['赤澤です。10/16打ち合わせ準備シートの回答です。',''];
+  items.forEach(function(it,i){out.push((i+1)+'. '+it.title);
+    it.subs.forEach(function(s,j){var n='q'+i+'_'+j,v=val(n),t=txt(n);out.push('・'+s.q+'：'+(v||'未回答')+(t?'（'+t+'）':''))});out.push('')});
+  out.push('その他：'+(extra.value.trim()||'なし'));return out.join('\n')}
+function update(save){var done=0;items.forEach(function(it,i){it.subs.forEach(function(s,j){if(val('q'+i+'_'+j))done++})});
+  prog.textContent='回答 '+done+' / '+total+(done===total?'　ぜんぶ選べました':'');reply.value=compose();
+  if(save){var d={extra:extra.value};document.querySelectorAll('input[type=radio]:checked').forEach(function(r){d[r.name]=r.value});document.querySelectorAll('textarea[data-t]').forEach(function(t){d['t_'+t.dataset.t]=t.value});
+    try{localStorage.setItem(key,JSON.stringify(d))}catch(e){ok=false}}
+  if(!ok)status.textContent='この端末では自動保存できません。回答をコピーするか、テキストで保存してください。'}
+document.addEventListener('input',function(e){if(e.target.closest('main'))update(true)});
+document.addEventListener('change',function(e){if(e.target.type==='radio')update(true)});
+update(false);
+document.getElementById('copy').addEventListener('click',function(){update(true);
+  if(navigator.clipboard){navigator.clipboard.writeText(reply.value).then(function(){status.textContent='コピーしました。Messengerに貼り付けて送ってください。'},sel)}else sel()});
+function sel(){reply.focus();reply.select();reply.setSelectionRange(0,reply.value.length);status.textContent='下の文章を選びました。端末のコピー操作でコピーしてください。'}
+document.getElementById('download').addEventListener('click',function(){update(true);var u=URL.createObjectURL(new Blob(['﻿'+reply.value],{type:'text/plain;charset=utf-8'})),a=document.createElement('a');a.href=u;a.download='10月16日_準備シート_回答.txt';a.click();setTimeout(function(){URL.revokeObjectURL(u)},1000)});
+document.getElementById('clear').addEventListener('click',function(){document.querySelectorAll('input[type=radio]').forEach(function(r){r.checked=false});document.querySelectorAll('textarea').forEach(function(t){if(t!==reply)t.value=''});try{localStorage.removeItem(key)}catch(e){}update(false);status.textContent='このブラウザの回答を消しました。'});
+})();
+</script></body></html>

@@ -1,0 +1,315 @@
+/* 赤澤久美子 個人HP 10/14 海と空版
+   署名モチーフ：水平線（細い線＋小さな太陽）。各ページで3〜4回くり返す */
+:root{
+  --ink:#17364a;--muted:#4f6773;--paper:#fdfcf8;--white:#ffffff;
+  --sky:#e4f3fb;--sky2:#c6e4f4;--sea:#1f86b5;--sea-deep:#0f5a8a;--accent:#136a9c;
+  --sun:#f2b84b;--sun-soft:#fff6dc;--line:#cddde1;--sand:#f6efe5;
+  --mincho:'Shippori Mincho','Yu Mincho','Hiragino Mincho ProN',serif;
+  --gothic:'Zen Kaku Gothic New','Yu Gothic','Hiragino Sans',Meiryo,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;background:var(--paper);color:var(--ink);font:17.5px/1.95 var(--gothic);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:6px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+button{font:inherit;cursor:pointer}
+::selection{background:var(--sun-soft)}
+h1,h2,h3,.serif{font-family:var(--mincho);font-weight:500;letter-spacing:.06em}
+h1,h2,h3,.lead,.btn,summary{word-break:auto-phrase;text-wrap:pretty}
+.nw{white-space:nowrap}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;z-index:50;background:#fff;padding:8px 14px}
+.wrap{max-width:1180px;margin:auto;padding:0 48px}
+
+/* 制作確認バー（公開時に外す） */
+.review{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:10px 16px;flex-wrap:wrap;padding:10px 4%;background:#f1f0eb;border-bottom:1px solid #d9dad3;color:#3f4b4e;font-size:14px}
+.review p{margin:0}.review strong{letter-spacing:.08em;margin-right:12px}
+.fv-switch{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.fv-switch span{margin-right:4px}
+.fv-switch button{border:1px solid #b4bfbd;background:transparent;color:#3f4b4e;padding:4px 16px;min-height:42px;border-radius:30px;font-size:14px}
+.fv-switch button[aria-pressed=true]{background:#fff;border-color:#3f4b4e;box-shadow:inset 0 0 0 1px #3f4b4e}
+
+/* ヘッダー */
+.site-head{position:relative;z-index:4}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:22px;padding-bottom:22px}
+.brand{text-decoration:none;font-family:var(--mincho);font-size:25px;letter-spacing:.16em;line-height:1.4}
+.brand small{display:block;font-family:var(--gothic);font-size:10px;letter-spacing:.22em;color:var(--muted)}
+.gnav{display:flex;gap:30px;font-size:15px;letter-spacing:.06em}
+.gnav a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
+.gnav a:hover,.gnav a[aria-current=page]{color:var(--accent);text-decoration:underline}
+.home .site-head{position:absolute;left:0;right:0}
+
+/* 水平線モチーフ */
+.horizon{position:relative;height:1px;background:linear-gradient(90deg,transparent,var(--line) 12%,var(--line) 88%,transparent);margin:0 auto;max-width:1180px}
+.horizon::after{content:'';position:absolute;left:68%;top:-6px;width:12px;height:12px;border-radius:50%;background:radial-gradient(circle,var(--sun) 0 45%,rgba(239,174,120,.25) 46% 100%)}
+.kicker{display:flex;align-items:center;gap:12px;margin:0 0 18px;font-size:12.5px;letter-spacing:.22em;color:var(--accent)}
+.kicker::before{content:'';width:28px;height:1px;background:currentColor}
+.kicker::after{content:'';width:6px;height:6px;border-radius:50%;background:var(--sun)}
+
+/* ===== FV ===== */
+.hero{position:relative;width:100%;min-height:max(680px,92vh);overflow:hidden;background:var(--sky)}
+.scene{position:absolute;inset:0;width:100%;height:100%}
+.scene svg{width:100%;height:100%}
+.cloud{animation:drift 60s linear infinite}
+.cloud.c2{animation-duration:85s;animation-delay:-30s}
+.cloud.c3{animation-duration:110s;animation-delay:-70s}
+@keyframes drift{from{transform:translateX(-25%)}to{transform:translateX(125%)}}
+.glint{animation:glint 7s ease-in-out infinite}
+.glint.g2{animation-delay:-2.3s}.glint.g3{animation-delay:-4.6s}
+@keyframes glint{0%,100%{opacity:.15;transform:translateX(0)}50%{opacity:.7;transform:translateX(18px)}}
+.swell{animation:swell 9s ease-in-out infinite alternate}
+@keyframes swell{from{transform:translateY(0)}to{transform:translateY(6px)}}
+.hero-inner{position:relative;z-index:1;max-width:1180px;margin:auto;padding:150px 48px 0}
+.hero-copy{max-width:640px}
+.eyebrow{font-size:15px;letter-spacing:.12em;color:var(--sea-deep);margin:0 0 26px}
+.hero h1{font-size:60px;line-height:1.55;margin:0 0 28px;color:var(--ink)}
+.hero h1 .soft{display:block;font-size:.62em;line-height:1.7;margin-top:14px;color:var(--sea-deep)}
+.hero .lead{font-size:18.5px;line-height:2.05;color:#2f4b55;margin:0 0 34px}
+.hero-photo{display:none}
+.hero-note{position:absolute;right:48px;bottom:26px;z-index:1;margin:0;font-family:var(--mincho);font-size:13px;letter-spacing:.2em;color:rgba(255,255,255,.92)}
+/* FV 案B：空と雲（水平線を下げ、空を大きく） */
+.fv-cloud .scene .sea-group{transform:translateY(24%)}
+.fv-cloud .scene .cloud-extra{display:inline}
+.fv-cloud .hero .hero-note{color:var(--sea-deep)}
+.cloud-extra{display:none}
+/* FV 案C：芽吹き（10/9版の写真を継承） */
+.fv-sprout .scene{display:none}
+.fv-sprout .hero{background:linear-gradient(180deg,var(--sky) 0%,var(--paper) 100%)}
+.fv-sprout .hero-inner{display:grid;grid-template-columns:45% 55%;gap:40px;align-items:center;padding-bottom:70px}
+.fv-sprout .hero-photo{display:block;margin:0}
+.fv-sprout .hero-photo img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:2px}
+.fv-sprout .hero-photo figcaption{font-size:12px;color:var(--muted);margin-top:8px;letter-spacing:.08em}
+.fv-sprout .hero-note{display:none}
+.fv-sprout .hero h1{font-size:44px}
+.fv-sprout .hero{min-height:0}
+
+/* FV 写真案（夏の空と海・CC0写真を全面に） */
+.photo-bg{display:none;position:absolute;inset:0;background-size:cover;background-position:center}
+.photo-bg::after{content:'';position:absolute;inset:0}
+.fv-s1 .photo-bg,.fv-s2 .photo-bg,.fv-s3 .photo-bg,.fv-s4 .photo-bg{display:block}
+.fv-s1 .scene,.fv-s2 .scene,.fv-s3 .scene,.fv-s4 .scene,.fv-s1 .hero-note,.fv-s2 .hero-note,.fv-s3 .hero-note,.fv-s4 .hero-note{display:none}
+.fv-s1 .photo-bg{background-image:url(assets/summer-clouds.jpg);background-position:center 70%}
+.fv-s2 .photo-bg{background-image:url(assets/summer-horizon.jpg);background-position:center 55%}
+.fv-s3 .photo-bg{background-image:url(assets/summer-beach.jpg);background-position:center 40%}
+.fv-s4 .photo-bg{background-image:url(assets/summer-aerial.jpg);background-position:center 60%}
+/* 白い文字で抜く（ポカリ型）。読みやすさのため左側だけ薄く青を敷く */
+.fv-s1 .photo-bg::after,.fv-s2 .photo-bg::after,.fv-s3 .photo-bg::after{background:linear-gradient(90deg,rgba(8,60,110,.38) 0%,rgba(8,60,110,.12) 55%,rgba(8,60,110,0) 80%)}
+.fv-s2 .photo-bg::after{background:linear-gradient(90deg,rgba(8,50,100,.5) 0%,rgba(8,50,100,.25) 55%,rgba(8,50,100,.05) 85%)}
+.fv-s4 .photo-bg::after{background:linear-gradient(90deg,rgba(6,70,100,.5) 0%,rgba(6,70,100,.2) 55%,rgba(6,70,100,0) 85%)}
+.fv-s1 .hero :is(h1,.lead,.eyebrow,h1 .soft),.fv-s2 .hero :is(h1,.lead,.eyebrow,h1 .soft),.fv-s3 .hero :is(h1,.lead,.eyebrow,h1 .soft),.fv-s4 .hero :is(h1,.lead,.eyebrow,h1 .soft){color:#fff;text-shadow:0 2px 16px rgba(0,40,80,.35)}
+.fv-s1 .hero .btn-main,.fv-s2 .hero .btn-main,.fv-s3 .hero .btn-main,.fv-s4 .hero .btn-main{background:#fff;color:var(--sea-deep)}
+.home:is(.fv-s1,.fv-s2,.fv-s3,.fv-s4) .site-head :is(.brand,.brand small,.gnav a){color:#fff}
+
+/* ボタン */
+.btn{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:58px;padding:14px 28px;border-radius:40px;text-decoration:none;font-size:17px;letter-spacing:.06em;transition:background .25s,transform .25s}
+.btn-main{background:var(--sea-deep);color:#fff}
+.btn-main:hover{background:var(--accent);transform:translateY(-1px)}
+.btn-line{border:1px solid currentColor;color:var(--ink);background:rgba(255,255,255,.6)}
+.btn-line:hover{background:#fff}
+.btn[aria-disabled=true]{background:#e4ebec;color:#5d6f74;cursor:not-allowed;transform:none}
+.btn .arw{font-size:13px}
+.btn-note{display:block;font-size:14px;color:var(--muted);margin-top:10px;letter-spacing:.04em}
+
+/* セクション共通 */
+.section{padding:110px 0}
+.section h2{font-size:42px;line-height:1.6;margin:0 0 26px}
+.section h3{font-size:25px;line-height:1.6;margin:0 0 12px}
+.lead{font-size:19.5px;line-height:2}
+.muted{color:var(--muted)}
+.note{font-size:15px;color:var(--muted);line-height:1.8}
+
+/* 悩み：手紙風 非対称 */
+.letter{display:grid;grid-template-columns:38% 1fr;gap:64px;align-items:start}
+.letter-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.letter-list li{padding:22px 0 22px 34px;border-bottom:1px solid var(--line);position:relative;font-family:var(--mincho);font-size:21px;line-height:1.8}
+.letter-list li::before{content:'';position:absolute;left:0;top:37px;width:18px;height:1px;background:var(--sea)}
+.letter-after{margin:34px 0 0;font-size:18px;line-height:2.1}
+
+/* 診断：空の色面＋大判 */
+.know{background:linear-gradient(180deg,var(--paper) 0%,var(--sky) 30%,var(--sky) 70%,var(--paper) 100%)}
+.know-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.chart-frame{position:relative;width:100%;max-width:500px;margin:0 0 0 auto;background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px 18px 46px}
+.chart-frame svg{width:100%;height:auto}
+.chart-frame figcaption{position:absolute;bottom:16px;left:0;right:0;text-align:center;font-size:14px;color:var(--muted)}
+
+/* 料金：罫線インデックス */
+.offer{display:grid;grid-template-columns:40% 1fr;gap:64px}
+.price-big{font-family:var(--mincho);font-size:72px;line-height:1.1;letter-spacing:.02em;color:var(--sea-deep);margin:18px 0 6px}
+.price-big small{font-size:18px;margin-left:6px;letter-spacing:.08em}
+.price-sub{font-size:16px;color:var(--muted);margin:0 0 24px}
+.index-list{margin:0;border-top:1px solid var(--ink)}
+.index-list div{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--line)}
+.index-list dt{font-size:14.5px;letter-spacing:.14em;color:var(--accent);padding-top:3px}
+.index-list dd{margin:0}
+
+/* 全幅バンド（海） */
+.band{position:relative;overflow:hidden;color:#fff;text-align:left;background:linear-gradient(180deg,#5fb6e3 0%,var(--sea) 45%,var(--sea-deep) 100%);padding:120px 0}
+.band::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;background:rgba(255,255,255,.6)}
+.band .wrap{position:relative;z-index:1}
+.band p.big{font-family:var(--mincho);font-size:48px;line-height:1.7;letter-spacing:.08em;margin:0 0 22px}
+.band p{max-width:620px;line-height:2.1;margin:0 0 18px}
+.band a{color:#fff}
+.band .waves{position:absolute;left:0;right:0;bottom:0;width:100%;height:90px;opacity:.35}
+
+/* 流れ：特大ナンバー */
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{display:grid;grid-template-columns:150px 1fr;gap:28px;padding:30px 0;border-bottom:1px solid var(--line);counter-increment:s}
+.steps li::before{content:counter(s,decimal-leading-zero);font-family:var(--mincho);font-size:64px;line-height:1;color:var(--sky2);-webkit-text-stroke:1px var(--sea)}
+.steps h3{font-size:23px;margin:4px 0 8px}
+.steps p{margin:0}
+.flow-head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:34px}
+
+/* 半年コース */
+.course{display:grid;grid-template-columns:1fr 1.15fr;gap:72px;align-items:start}
+.course-mark{font-family:var(--mincho);font-size:132px;line-height:1;color:var(--sea-deep);letter-spacing:0;margin:10px 0 0}
+.course-mark span{font-size:32px;margin-left:8px}
+.course-rhythm{display:flex;gap:0;margin:28px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.course-rhythm li{flex:1;padding:16px 10px 0 0;font-size:16px;line-height:1.7}
+.course-rhythm b{display:block;font-family:var(--mincho);font-weight:500;font-size:18px;color:var(--accent)}
+
+/* FAQ */
+.faq-grid{display:grid;grid-template-columns:32% 1fr;gap:64px}
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--ink)}
+summary{list-style:none;cursor:pointer;padding:22px 44px 22px 0;position:relative;font-family:var(--mincho);font-size:20px;line-height:1.7}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'';position:absolute;right:6px;top:50%;width:14px;height:14px;margin-top:-7px;background:linear-gradient(var(--sea),var(--sea)) center/14px 1px no-repeat,linear-gradient(var(--sea),var(--sea)) center/1px 14px no-repeat;transition:transform .3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:0 0 22px;color:var(--muted)}
+
+/* 締めの夕方の海 */
+.closing{position:relative;overflow:hidden;padding:130px 0 140px;background:linear-gradient(180deg,var(--paper) 0%,#e6f4fc 25%,#bfe2f6 61.8%,#5fb6e3 62%,#2a91c4 80%,var(--sea-deep) 100%)}
+.closing::before{content:'';position:absolute;left:0;right:0;top:62%;height:2px;background:rgba(255,255,255,.75)}
+.closing .wrap{position:relative;z-index:1;text-align:center}
+.closing h2{font-size:42px;line-height:1.7;margin:0 0 20px}
+.closing p{margin:0 0 30px}
+.closing .space{height:150px}
+
+/* 下層ページの導入 */
+.page-hero{position:relative;overflow:hidden;padding:84px 0 96px;background:linear-gradient(180deg,var(--sky) 0%,#f3f9fa 70%,var(--paper) 100%)}
+.page-hero::after{content:'';position:absolute;left:0;right:0;bottom:38px;height:1px;background:linear-gradient(90deg,transparent,var(--sky2) 15%,var(--sky2) 85%,transparent)}
+.page-hero.photo{padding:110px 0 120px;color:#fff;background:var(--ph) var(--pos,center)/cover no-repeat}
+.page-hero.photo::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,60,110,.45) 0%,rgba(8,60,110,.15) 60%,rgba(8,60,110,0) 100%)}
+.page-hero.photo::after{display:none}
+.page-hero.photo .wrap{position:relative;z-index:1}
+.page-hero.photo :is(h1,p.desc,.page-count){color:#fff;text-shadow:0 2px 14px rgba(0,40,80,.35)}
+.page-hero .sun{position:absolute;right:14%;bottom:30px;width:16px;height:16px;border-radius:50%;background:var(--sun);box-shadow:0 0 0 10px rgba(239,174,120,.18)}
+.page-count{font-size:14px;letter-spacing:.24em;color:var(--accent);margin:0 0 14px}
+.page-hero h1{font-size:50px;line-height:1.6;margin:0 0 18px}
+.page-hero p.desc{max-width:620px;margin:0;color:#3a5660}
+
+/* プロフィール */
+.about{display:grid;grid-template-columns:40% 1fr;gap:72px;align-items:start}
+.portrait{position:relative;aspect-ratio:4/5;border-radius:200px 200px 4px 4px;background:linear-gradient(180deg,#9fd3f0 0%,#dff1fb 58%,#5fb6e3 58.3%,#1f86b5 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:28px;color:#fff;overflow:hidden}
+.portrait::before{content:'';position:absolute;left:12%;top:14%;width:46%;height:16%;border-radius:50%;background:rgba(255,255,255,.85);filter:blur(12px)}
+.portrait p{position:relative;margin:0;font-family:var(--mincho);font-size:16px;line-height:1.7}
+.portrait small{position:relative;font-size:12px;opacity:.9}
+.name-ja{font-size:40px;margin:0}
+.name-en{font-size:12px;letter-spacing:.3em;color:var(--muted);margin:2px 0 30px}
+.quote{margin:40px 0 0;padding:28px 0 0 0;border-top:1px solid var(--line);font-family:var(--mincho);font-size:28px;line-height:1.8;color:var(--sea-deep)}
+.principles{list-style:none;margin:0;padding:0}
+.principles li{display:grid;grid-template-columns:120px 260px 1fr;gap:28px;align-items:baseline;padding:30px 0;border-bottom:1px solid var(--line)}
+.principles li:first-child{border-top:1px solid var(--ink)}
+.principles .num{font-family:var(--mincho);font-size:44px;color:var(--sea);line-height:1}
+.principles h3{margin:0;font-size:24px}
+.principles p{margin:0}
+.pending-box{border:1px dashed #a9c3ca;border-radius:4px;padding:26px 30px;background:rgba(231,242,246,.45)}
+.pending-box h3{font-size:18px;margin:0 0 8px}
+.pending-box p{margin:0;font-size:14px;color:var(--muted)}
+
+/* 本人写真（切り抜き）：夏の空のアーチに立たせる */
+.person{position:relative;margin:0;aspect-ratio:4/5;border-radius:240px 240px 6px 6px;overflow:hidden;background:url(assets/summer-clouds.jpg) 30% 40%/cover}
+.person::after{content:'';position:absolute;left:0;right:0;bottom:0;height:22%;background:linear-gradient(180deg,rgba(253,252,248,0),rgba(253,252,248,.9))}
+.person img{position:absolute;left:50%;bottom:0;width:96%;height:auto;transform:translateX(-50%)}
+.band-person .wrap{display:grid;grid-template-columns:1fr;position:relative}
+.band-face{position:absolute;right:0;bottom:-120px;width:min(40vw,500px);margin:0;z-index:0}
+.band-face img{width:100%;height:auto;filter:drop-shadow(0 12px 30px rgba(0,40,80,.25))}
+.band-person .wrap>*:not(.band-face){position:relative;z-index:1;max-width:560px}
+
+/* 申込み・問い合わせ */
+.entries{display:grid;grid-template-columns:1.2fr 1fr;gap:0;border-top:1px solid var(--ink)}
+.entry{padding:40px 44px 44px 0}
+.entry+.entry{padding-left:44px;padding-right:0;border-left:1px solid var(--line)}
+.entry h2{font-size:30px}
+.entry .price-big{font-size:52px}
+
+/* フッター */
+.site-foot{padding:56px 0 40px;border-top:1px solid var(--line);font-size:15px}
+.site-foot .wrap{display:grid;grid-template-columns:1fr auto;gap:22px 40px;align-items:start}
+.foot-brand{font-family:var(--mincho);font-size:18px;letter-spacing:.16em;margin:0 0 6px}
+.foot-nav{display:flex;flex-wrap:wrap;gap:6px 24px}
+.foot-nav a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
+.foot-nav a:hover{text-decoration:underline}
+.foot-legal{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px 24px;color:var(--muted);font-size:13.5px}
+.review-end{grid-column:1/-1;margin-top:10px;background:#f4f3ee;border:1px solid #deded6;border-radius:4px;padding:0 18px;font-size:13px}
+.review-end summary{font-family:var(--gothic);font-size:13px;padding:12px 30px 12px 0}
+.review-end p{color:#4c5a5d;margin:0 0 12px}
+
+/* ふわっと出す（JSがあるときだけ隠す） */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity 1s ease,transform 1s ease}
+.js .rv.on{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  .cloud,.glint,.swell{animation:none}
+  .js .rv{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* ===== タブレット以下 ===== */
+@media (max-width:900px){
+  .wrap{padding:0 24px}
+  .hero-inner{padding:130px 24px 0}
+  .hero h1{font-size:40px}
+  .letter,.know-grid,.offer,.course,.faq-grid,.about,.flow-head,.entries{grid-template-columns:1fr;gap:36px}
+  .chart-frame{position:relative;width:100%;max-width:500px;margin:0 0 0 auto;background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px 18px 46px}
+  .principles li{grid-template-columns:70px 1fr;gap:10px 18px}
+  .principles li p{grid-column:2}
+  .entry,.entry+.entry{padding:36px 0;border-left:0}
+  .entry+.entry{border-top:1px solid var(--line)}
+  .fv-sprout .hero-inner{grid-template-columns:1fr}
+  .band-face{width:min(46vw,380px);right:0}
+  .person{max-width:440px}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .review{font-size:13px}.fv-switch button{font-size:13px;padding:4px 12px}
+  .lead{font-size:17px}.hero .lead{font-size:15.5px}
+  .wrap{padding:0 16px}
+  .review{padding:8px 16px}
+  .site-head .wrap{flex-direction:column;align-items:flex-start;gap:4px;padding-top:16px;padding-bottom:6px}
+  .brand{font-size:19px}
+  .gnav{gap:16px;font-size:12.5px;flex-wrap:wrap}
+  .hero{min-height:760px}
+  .hero-inner{padding:150px 16px 0}
+  .hero h1,.fv-sprout .hero h1{font-size:31px;line-height:1.6;margin-bottom:22px}
+  .hero h1 .soft{font-size:.66em}
+  .hero .lead{font-size:14.5px;line-height:2}
+  .hero-note{right:16px;bottom:18px;font-size:11px}
+  .section{padding:68px 0}
+  .section h2,.closing h2{font-size:27px}
+  .section h3{font-size:20px}
+  .page-hero{padding:56px 0 76px}
+  .page-hero.photo{padding:72px 0 84px}
+  .page-hero.photo::before{background:rgba(8,60,110,.32)}
+  .page-hero h1{font-size:30px}
+  .letter-list li{font-size:17px;padding-left:28px}
+  .price-big{font-size:52px}
+  .index-list div{grid-template-columns:1fr;gap:4px}
+  .steps li{grid-template-columns:64px 1fr;gap:14px}
+  .steps li::before{font-size:40px}
+  .band{padding:80px 0}
+  .band p.big{font-size:28px}
+  .band-person{padding-bottom:0}
+  .band-face{position:relative;right:auto;bottom:auto;width:88%;margin:-70px auto 0}
+  .band-person .waves{height:50px}
+  .course-mark{font-size:96px}
+  .course-rhythm{flex-direction:column}
+  .course-rhythm li{padding:14px 0;border-bottom:1px solid var(--line)}
+  .quote{font-size:21px}
+  .name-ja{font-size:32px}
+  .btn{width:100%}
+  .site-foot .wrap{grid-template-columns:1fr}
+  .offer h2{font-size:23px}
+  .closing{padding:90px 0 110px}
+  .closing .space{height:110px}
+}
