@@ -223,7 +223,7 @@ details p{margin:0 0 22px;color:var(--muted)}
 .person img{position:absolute;left:50%;bottom:0;width:96%;height:auto;transform:translateX(-50%)}
 .band-person .wrap{display:grid;grid-template-columns:1fr;position:relative}
 .band-face{position:absolute;right:0;bottom:-120px;width:min(40vw,500px);margin:0;z-index:0}
-.band-face img{width:100%;height:auto;filter:drop-shadow(0 12px 30px rgba(0,40,80,.25))}
+.band-face img{width:100%;height:auto;filter:drop-shadow(0 6px 14px rgba(0,40,80,.14))}
 .band-person .wrap>*:not(.band-face){position:relative;z-index:1;max-width:560px}
 
 /* 申込み・問い合わせ */
