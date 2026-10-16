@@ -3,13 +3,13 @@
   var d=document,root=d.documentElement;root.classList.add('js');
   var FV=['fv-s1','fv-s3','fv-s4'];
   function setFv(v){
-    if(FV.indexOf(v)<0)v='fv-s1';
+    if(FV.indexOf(v)<0)v='fv-s3';
     FV.forEach(function(c){d.body.classList.toggle(c,c===v);});
     d.querySelectorAll('[data-fv]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.fv===v));});
   }
-  var saved=null;try{saved=sessionStorage.getItem('akazawa-fv2');}catch(e){}
+  var saved=null;
   var q=location.search.match(/fv=([a-z0-9-]+)/);if(q)saved=q[1];
-  setFv(saved||'fv-s1');
+  setFv(saved||'fv-s3');
   d.querySelectorAll('[data-fv]').forEach(function(b){b.addEventListener('click',function(){setFv(b.dataset.fv);try{sessionStorage.setItem('akazawa-fv2',b.dataset.fv);}catch(e){}});});
 
   // 受付準備中のボタンは押しても移動しない
