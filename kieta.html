@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex,nofollow">
+<title>消えた資料をさがす</title>
+<style>
+:root{--ink:#17364a;--muted:#55707d;--line:#d3e3ec;--sky:#e4f3fb;--sea:#1f86b5;--deep:#0f5a8a;--paper:#fdfcf8;--hi:#ff7a00;--warn:#fff4e5;--warnline:#f0c27a;--ok:#eaf7ee;--okline:#9fd1ac;--ng:#fdecec;--ngline:#e8a3a3}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#e4f3fb 0,#f7fbfd 380px,var(--paper) 900px);color:var(--ink);font:19px/1.9 'Hiragino Sans','Yu Gothic',Meiryo,sans-serif}
+main{max-width:1040px;margin:auto;padding:24px 16px 90px}
+header,section{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px 20px;margin-bottom:20px}
+header{border-top:6px solid var(--sea)}
+h1{font-size:30px;line-height:1.5;margin:6px 0 10px;text-align:center}
+h2{font-size:24px;line-height:1.5;margin:0 0 12px;display:flex;gap:12px;align-items:center}
+h2 .n{flex:none;color:#fff;background:var(--sea);font-size:20px;border-radius:50%;width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center}
+h3{font-size:20px;margin:22px 0 6px}
+p{margin:10px 0}
+.lead{font-size:20px}
+.letter{background:#fffaf0;border:1px solid #f1dfb8;border-radius:14px;padding:16px 18px;margin:14px 0}
+.do{font-size:21px;font-weight:bold;background:var(--sky);border-left:6px solid var(--sea);border-radius:8px;padding:10px 14px;margin:14px 0}
+.note{background:var(--sky);border-radius:12px;padding:14px 16px;margin:14px 0}
+.warn{background:var(--warn);border:2px solid var(--warnline);border-radius:12px;padding:14px 16px;margin:14px 0}
+.ok{background:var(--ok);border:2px solid var(--okline);border-radius:12px;padding:14px 16px;margin:14px 0}
+.ng{background:var(--ng);border:2px solid var(--ngline);border-radius:12px;padding:14px 16px;margin:14px 0}
+.small{font-size:16px;color:var(--muted)}
+figure{margin:14px 0;text-align:center}
+figure svg{width:100%;height:auto;border-radius:12px;background:#f3f6f8}
+figure.mid svg{max-width:640px}
+figcaption{font-size:15px;color:var(--muted)}
+.side{display:grid;gap:18px;grid-template-columns:1fr}
+@media(min-width:900px){.side{grid-template-columns:5fr 7fr;align-items:start}.side figure{margin-top:0;position:sticky;top:12px}}
+.copybox{border:3px solid var(--sea);border-radius:14px;margin:16px 0;overflow:hidden}
+.copybox .label{background:var(--sea);color:#fff;font-weight:bold;padding:8px 14px;font-size:17px}
+.copybox pre{margin:0;padding:14px 16px;white-space:pre-wrap;word-break:break-word;font:16px/1.8 'Hiragino Sans','Yu Gothic',Meiryo,sans-serif;background:#f8fcfe;max-height:260px;overflow:auto}
+.copybox button{display:block;width:100%;border:0;background:var(--hi);color:#fff;font-size:22px;font-weight:bold;padding:18px;cursor:pointer;font-family:inherit}
+.copybox button.done{background:#2e8b57}
+kbd{display:inline-block;border:1px solid #9ab;border-bottom-width:4px;border-radius:7px;padding:0 9px;font-family:inherit;font-size:17px;background:#fff;line-height:1.6;margin:0 2px}
+.words{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:17px}
+.words dt{font-weight:bold;color:var(--deep)}
+.words dd{margin:0}
+.two{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:620px){.two{grid-template-columns:1fr 1fr}}
+.two>div{margin:0}
+details{border:1px solid var(--line);border-radius:12px;margin:10px 0;background:#fff}
+summary{cursor:pointer;padding:14px 44px 14px 16px;font-weight:bold;list-style:none;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"＋";position:absolute;right:16px;top:12px;color:var(--sea);font-size:22px}
+details[open] summary::after{content:"－"}
+details[open] summary{border-bottom:1px dashed var(--line)}
+details .a{padding:8px 18px 14px}
+.phone-only{display:none}
+@media(max-width:700px) and (hover:none){.phone-only{display:block}}
+footer{text-align:center;color:var(--muted);font-size:17px}
+</style></head>
+<body><main>
+
+<header>
+<h1>消えた資料を<br>いっしょに、さがしましょう</h1>
+<div class="letter">
+<p>久美子さん、ごめんなさい！<br>もう寝るところで、ちょっとお酒も飲んじゃっていて……。いまはうまく手伝えそうにないので、代わりに、ひとりでもできるように手順をまとめました。</p>
+<p>あきらめるのは、まだ早いですよ。Macは、保存していなくても、こっそり控えをとっていることがあるんです。</p>
+<p>さがすのは<b>「Codex（コーデックス）」</b>にお願いします。このページの文を<b>コピーして、はるだけ</b>で大丈夫です。ゆっくり、上から順番にどうぞ。</p>
+</div>
+</header>
+
+<div class="warn phone-only">
+<p><b>いまスマホで見ていますか？</b></p>
+<p>このページは<b>Macで開いてください</b>ね。スマホでコピーしても、Macにははれないんです。</p>
+<p>MacのLINEでこのリンクを開くか、MacのSafari（方位磁石のマーク）の上の欄に <b>inada2026.github.io/akazawa-hp-preview/kieta.html</b> と打って <kbd>return</kbd> を押してください。</p>
+</div>
+
+<section>
+<h2>はじめに：おねがい2つ</h2>
+<div class="ng"><p><b>① KeynoteやPowerPointで、新しい資料を作らないでくださいね</b></p><p class="small">控えが上書きされて、消えてしまうことがあります。さがし終わるまで、ちょっとだけがまんです。</p></div>
+<div class="ok"><p><b>② こまったら、Codexに聞いてみてください</b></p><p class="small">このページの一番下に「こまったときの文」があります。何回使っても大丈夫です。</p></div>
+<div class="note"><p><b>CanvaやGoogleスライドで作っていたなら、Codexはいりません。</b><br>ネットの上に自動で残っています。Canvaを開いて「最近のデザイン」を見てみてください。</p></div>
+</section>
+
+<section>
+<h2>まず、ことばを3つだけ</h2>
+<dl class="words">
+<dt>クリック</dt><dd>キーボードの下にある四角い板（<b>トラックパッド</b>）を、指で<b>1回カチッ</b>と押しこむこと。</dd>
+<dt>ダブルクリック</dt><dd>トラックパッドを<b>カチカチッと2回、速く</b>押すこと。</dd>
+<dt>矢印を動かす</dt><dd>トラックパッドを指1本で<b>なでる</b>と、画面の矢印が動きます。</dd>
+</dl>
+</section>
+
+<section>
+<h2><span class="n">1</span>Codexを出す</h2>
+<div class="side">
+<div>
+<p>右の絵の<b style="color:var(--hi)">オレンジ色のキー</b>を使います。</p>
+<p><b>「⌘ command（コマンド）」</b>は、キーボードの一番下の列、<b>スペースキー（一番長いキー）の左どなりの、そのまた左</b>にあります。キーに「⌘」のマークと「command」という字が書いてあります。</p>
+<div class="do">① 左の <kbd>⌘ command</kbd> を押したまま、指をはなさずに<br>② <kbd>スペース</kbd> をポンと押す</div>
+<p>画面のまん中に、細長い<b>さがす窓</b>が出てきます。</p>
+<div class="do">③ <b>codex</b> と打って、<kbd>return</kbd> を押す</div>
+<p class="small"><kbd>return</kbd>（リターン）は、右のはしにある大きめのキーです。</p>
+<p class="small">日本語の文字が出てしまったら、スペースの左にある <kbd>英数</kbd> を押してから、もう一度 codex と打ってみてください。</p>
+</div>
+<figure>
+<svg viewBox="0 0 620 330" role="img" aria-label="MacBookのキーボード。commandとスペースとreturnの場所">
+<rect x="4" y="4" width="612" height="322" rx="18" fill="#cfd5da"/>
+<g fill="#fff" stroke="#9aa6ae" stroke-width="1">
+<!-- row0 function -->
+<rect x="20" y="18" width="580" height="22" rx="4" fill="#eef1f3"/>
+<!-- row1 numbers -->
+<rect x="20" y="48" width="580" height="34" rx="5" fill="#eef1f3"/>
+<!-- row2 -->
+<rect x="20" y="90" width="58" height="34" rx="5"/>
+</g>
+<g fill="#fff" stroke="#9aa6ae">
+<rect x="84" y="90" width="36" height="34" rx="5"/><rect x="124" y="90" width="36" height="34" rx="5"/><rect x="164" y="90" width="36" height="34" rx="5"/><rect x="204" y="90" width="36" height="34" rx="5"/><rect x="244" y="90" width="36" height="34" rx="5"/><rect x="284" y="90" width="36" height="34" rx="5"/><rect x="324" y="90" width="36" height="34" rx="5"/><rect x="364" y="90" width="36" height="34" rx="5"/><rect x="404" y="90" width="36" height="34" rx="5"/><rect x="444" y="90" width="36" height="34" rx="5"/><rect x="484" y="90" width="36" height="34" rx="5"/>
+<rect x="20" y="132" width="68" height="34" rx="5"/>
+<rect x="94" y="132" width="36" height="34" rx="5"/><rect x="134" y="132" width="36" height="34" rx="5"/><rect x="174" y="132" width="36" height="34" rx="5"/><rect x="214" y="132" width="36" height="34" rx="5"/><rect x="254" y="132" width="36" height="34" rx="5"/><rect x="294" y="132" width="36" height="34" rx="5"/><rect x="334" y="132" width="36" height="34" rx="5"/><rect x="374" y="132" width="36" height="34" rx="5"/><rect x="414" y="132" width="36" height="34" rx="5"/><rect x="454" y="132" width="36" height="34" rx="5"/><rect x="494" y="132" width="36" height="34" rx="5"/>
+<rect x="20" y="174" width="88" height="34" rx="5"/>
+<rect x="114" y="174" width="36" height="34" rx="5"/><rect x="154" y="174" width="36" height="34" rx="5"/><rect x="194" y="174" width="36" height="34" rx="5"/><rect x="234" y="174" width="36" height="34" rx="5"/><rect x="274" y="174" width="36" height="34" rx="5"/><rect x="314" y="174" width="36" height="34" rx="5"/><rect x="354" y="174" width="36" height="34" rx="5"/><rect x="394" y="174" width="36" height="34" rx="5"/><rect x="434" y="174" width="36" height="34" rx="5"/><rect x="474" y="174" width="36" height="34" rx="5"/><rect x="514" y="174" width="86" height="34" rx="5"/>
+<!-- bottom row -->
+<rect x="20" y="216" width="44" height="40" rx="5"/><rect x="68" y="216" width="44" height="40" rx="5"/>
+<rect x="520" y="236" width="24" height="20" rx="3"/><rect x="548" y="226" width="24" height="14" rx="3"/><rect x="548" y="242" width="24" height="14" rx="3"/><rect x="576" y="236" width="24" height="20" rx="3"/>
+</g>
+<!-- return (orange) -->
+<path d="M526 90 h74 v76 h-64 v-42 h-10 z" fill="#fff1e3" stroke="#ff7a00" stroke-width="4"/>
+<text x="568" y="146" font-size="15" fill="#c25a00" text-anchor="middle" font-weight="bold">return</text>
+<!-- command left (orange) -->
+<rect x="116" y="216" width="70" height="40" rx="6" fill="#fff1e3" stroke="#ff7a00" stroke-width="4"/>
+<text x="151" y="234" font-size="15" fill="#c25a00" text-anchor="middle" font-weight="bold">⌘</text>
+<text x="151" y="250" font-size="12" fill="#c25a00" text-anchor="middle" font-weight="bold">command</text>
+<!-- eisu -->
+<rect x="190" y="216" width="46" height="40" rx="6" fill="#fff" stroke="#9aa6ae"/>
+<text x="213" y="241" font-size="13" fill="#333" text-anchor="middle">英数</text>
+<!-- space (orange) -->
+<rect x="240" y="216" width="160" height="40" rx="6" fill="#fff1e3" stroke="#ff7a00" stroke-width="4"/>
+<text x="320" y="241" font-size="15" fill="#c25a00" text-anchor="middle" font-weight="bold">スペース</text>
+<rect x="404" y="216" width="46" height="40" rx="6" fill="#fff" stroke="#9aa6ae"/>
+<text x="427" y="241" font-size="13" fill="#333" text-anchor="middle">かな</text>
+<rect x="454" y="216" width="60" height="40" rx="6" fill="#fff" stroke="#9aa6ae"/>
+<text x="484" y="234" font-size="13" fill="#555" text-anchor="middle">⌘</text>
+<text x="484" y="249" font-size="11" fill="#555" text-anchor="middle">command</text>
+<!-- V key highlight (blue) -->
+<rect x="234" y="174" width="36" height="34" rx="5" fill="#e3f0ff" stroke="#1f7aea" stroke-width="3"/>
+<text x="252" y="197" font-size="15" fill="#1f5fb0" text-anchor="middle" font-weight="bold">V</text>
+<g font-size="13" fill="#555" text-anchor="middle">
+<text x="132" y="197">Z</text><text x="172" y="197">X</text><text x="212" y="197">C</text><text x="292" y="197">B</text>
+<text x="112" y="155">A</text><text x="152" y="155">S</text><text x="192" y="155">D</text>
+<text x="102" y="113">Q</text><text x="142" y="113">W</text><text x="182" y="113">E</text>
+</g>
+<!-- callouts -->
+<g font-size="15" font-weight="bold" fill="#c25a00">
+<text x="150" y="282" text-anchor="middle">① これを押したまま</text>
+<text x="320" y="282" text-anchor="middle">② これをポン</text>
+</g>
+<path d="M150 266 v-6" stroke="#ff7a00" stroke-width="3"/>
+<text x="252" y="310" font-size="13" fill="#1f5fb0" text-anchor="middle">青い V は、はりつけのとき（手順3）に使います</text>
+</svg>
+<figcaption>MacBookのキーボード（見本）。オレンジのキーを使います。</figcaption>
+</figure>
+</div>
+<figure class="mid">
+<svg viewBox="0 0 640 210" role="img" aria-label="さがす窓にcodexと打つ">
+<rect x="60" y="30" width="520" height="56" rx="14" fill="#fff" stroke="#c4ccd2"/>
+<circle cx="96" cy="58" r="10" fill="none" stroke="#777" stroke-width="3"/><line x1="103" y1="65" x2="112" y2="74" stroke="#777" stroke-width="3"/>
+<text x="128" y="67" font-size="24" fill="#222">codex</text>
+<rect x="60" y="98" width="520" height="54" rx="10" fill="#dbeeff" stroke="#ff7a00" stroke-width="4"/>
+<rect x="78" y="108" width="34" height="34" rx="8" fill="#222"/><text x="95" y="132" font-size="16" fill="#fff" text-anchor="middle">&gt;_</text>
+<text x="126" y="133" font-size="20" fill="#222">Codex</text>
+<text x="320" y="188" font-size="16" fill="#c25a00" text-anchor="middle" font-weight="bold">これが出ていたら、return を押します</text>
+</svg>
+<figcaption>見本です。本物とアイコンの形が少しちがうことがあります。</figcaption>
+</figure>
+<p class="small">Codexが出てこなかったら、ページ下の「こまったとき」の<b>Q1</b>を見てみてください。</p>
+</section>
+
+<section>
+<h2><span class="n">2</span>おくる前に「思考量」を「中」にする</h2>
+<p>久美子さんのCodexは、<b>使える量に限りがあるプラン</b>です。たくさん考えさせる設定にすると、すぐに使い切ってしまいます。なので、最初に<b>「中」</b>にしておきましょう。</p>
+<div class="do">Codexの下の白い欄の近くにある、<b>「中」や「高」と書いてある小さなボタン</b>をクリック</div>
+<figure class="mid">
+<svg viewBox="0 0 640 400" role="img" aria-label="思考量を選ぶ画面の見本">
+<rect x="20" y="300" width="600" height="84" rx="16" fill="#fff" stroke="#c4ccd2"/>
+<text x="44" y="330" font-size="15" fill="#999">ここに文を打ちます</text>
+<rect x="40" y="346" width="150" height="28" rx="14" fill="#eef1f3"/><text x="115" y="366" font-size="13" fill="#555" text-anchor="middle">モデルの名前 ▾</text>
+<rect x="200" y="346" width="74" height="28" rx="14" fill="#fff1e3" stroke="#ff7a00" stroke-width="3"/><text x="237" y="366" font-size="14" fill="#c25a00" text-anchor="middle" font-weight="bold">中 ▾</text>
+<rect x="190" y="16" width="250" height="272" rx="12" fill="#fff" stroke="#c4ccd2"/>
+<text x="210" y="44" font-size="14" fill="#777">思考量を選択</text>
+<text x="214" y="78" font-size="17" fill="#333">低</text>
+<rect x="198" y="92" width="234" height="36" rx="8" fill="#e6f6ea" stroke="#2e8b57" stroke-width="3"/>
+<text x="214" y="117" font-size="18" fill="#1d6b3e" font-weight="bold">中　✓</text><text x="420" y="117" font-size="14" fill="#1d6b3e" text-anchor="end" font-weight="bold">← これ</text>
+<g fill="#b9b9b9" font-size="17"><text x="214" y="158">高</text><text x="214" y="192">極高</text><text x="214" y="226">ウルトラ</text><text x="214" y="260">マックス</text></g>
+<g stroke="#d9534f" stroke-width="2"><line x1="210" y1="152" x2="236" y2="152"/><line x1="210" y1="186" x2="252" y2="186"/><line x1="210" y1="220" x2="285" y2="220"/><line x1="210" y1="254" x2="285" y2="254"/></g>
+<text x="420" y="210" font-size="14" fill="#d9534f" text-anchor="end" font-weight="bold">えらばない</text>
+<path d="M237 296 v-6" stroke="#c4ccd2"/>
+</svg>
+<figcaption>見本です。本物では、ならび方や見た目が少しちがうことがあります。</figcaption>
+</figure>
+<div class="two">
+<div class="ok"><p><b>えらんでいいもの</b></p><p>「<b>中</b>」（おすすめ）か「低」</p></div>
+<div class="ng"><p><b>えらばないもの</b></p><p>「高」「極高」「ウルトラ」「マックス」<br><span class="small">英語なら High／Extra High／Ultra／Max</span></p></div>
+</div>
+<p class="small">「超高速」というスイッチがあったら、<b>オフ</b>のままにしておいてください。使う量が多くなります。</p>
+<p class="small">「モデルの名前」のボタンは、さわらなくて大丈夫です。</p>
+<p class="small">ボタンが見つからなかったら、そのまま手順3へ進んでも大丈夫です。</p>
+</section>
+
+<section>
+<h2><span class="n">3</span>この文をコピーして、Codexにはる</h2>
+<div class="do">下のオレンジのボタンをクリック</div>
+<p>文の中は、書きかえなくて大丈夫です。</p>
+<div class="copybox">
+<div class="label">Codexにおくる文 その1（さがして）</div>
+<pre id="p1">保存しないで閉じてしまった資料を、さがしてください。
+私はパソコンがまったくわかりません。中学生にもわかる、やさしい日本語で答えてください。英語やむずかしいことばは使わないでください。
+
+・閉じたのは、10月22日の夜22時ごろです
+・明日のセミナーで使う資料です
+・ソフトは、KeynoteかPowerPointだと思います（はっきりわかりません）
+・このMacは、最近買ったMacBookです
+
+おねがい
+1. このMacの中から、ここ3日のあいだに作ったり変わったりした資料（Keynote、PowerPoint、Pages、Word、PDFなど）をさがしてください。KeynoteとPowerPointの「自動保存」「自動回復」の場所、iCloud Drive、ゴミ箱、一時ファイルの場所も見てください。
+2. 見つかったら、デスクトップに「復元候補」というフォルダを作って、そこにコピーしてください。
+3. もとのファイルは、動かさない・消さない・上書きしないでください。
+4. 見つかったら、名前と、最後に変わった時間と、スライドが何枚くらいかを教えてください。一番それらしいものも教えてください。
+5. 私がやることがあるときは、押すところを1つずつ教えてください。1回に1つだけです。
+6. 使える量に限りがあるので、むだなく進めてください。
+7. 私がこまったら、あなたが最後まで助けてください。</pre>
+<button type="button" data-target="p1">この文をコピー</button>
+</div>
+<p>ボタンが緑になって「コピーしました」と出たら、うまくいっています。</p>
+<div class="do">Codexの画面の、<b>下の白い欄</b>をクリック</div>
+<figure class="mid">
+<svg viewBox="0 0 640 330" role="img" aria-label="Codexの画面の見本">
+<rect x="30" y="16" width="580" height="300" rx="14" fill="#fff" stroke="#c4ccd2"/>
+<rect x="30" y="16" width="580" height="34" rx="14" fill="#eef1f3"/>
+<circle cx="54" cy="33" r="7" fill="#ff5f57"/><circle cx="76" cy="33" r="7" fill="#febc2e"/><circle cx="98" cy="33" r="7" fill="#28c840"/>
+<text x="320" y="38" font-size="14" fill="#666" text-anchor="middle">Codex</text>
+<text x="320" y="140" font-size="18" fill="#aaa" text-anchor="middle">（ここに、Codexの返事が出ます）</text>
+<rect x="60" y="222" width="520" height="76" rx="14" fill="#fff" stroke="#ff7a00" stroke-width="5"/>
+<text x="84" y="254" font-size="17" fill="#999">ここをクリック</text>
+<rect x="84" y="266" width="60" height="22" rx="11" fill="#eef1f3"/><text x="114" y="282" font-size="12" fill="#555" text-anchor="middle">中 ▾</text>
+<circle cx="548" cy="262" r="18" fill="#222"/><path d="M548 271 L548 253 M540 260 L548 252 L556 260" stroke="#fff" stroke-width="3" fill="none"/>
+<text x="548" y="212" font-size="14" fill="#555" text-anchor="middle">おくるボタン</text>
+</svg>
+<figcaption>見本です。本物と少しちがうことがあります。</figcaption>
+</figure>
+<div class="do"><kbd>⌘ command</kbd> を押したまま、<kbd>V</kbd> をポンと押す</div>
+<p>さっきの文が、欄の中に入ります。（これが「はりつけ」です。Vの場所は、手順1のキーボードの絵の<b style="color:#1f7aea">青いキー</b>です）</p>
+<div class="do"><kbd>return</kbd> を押す（または右の黒い丸 ↑ をクリック）</div>
+<p class="small">「どのフォルダで作業しますか」と聞かれたら、<b>家のマーク</b>か<b>自分の名前</b>が書いてあるものをクリックして、「開く」をクリックしてください。</p>
+</section>
+
+<section>
+<h2><span class="n">4</span>待ちます。小さな窓が出たら「許可」</h2>
+<p>Codexがさがし始めます。<b>5分くらいかかる</b>こともあるので、のんびり待っていてくださいね。</p>
+<p>とちゅうで、こんな小さな窓が出ることがあります。</p>
+<figure class="mid">
+<svg viewBox="0 0 640 230" role="img" aria-label="許可をたずねる窓の見本">
+<rect x="90" y="16" width="460" height="200" rx="16" fill="#fff" stroke="#c4ccd2"/>
+<text x="320" y="62" font-size="17" fill="#222" text-anchor="middle" font-weight="bold">"Codex"が、ほかのアプリの</text>
+<text x="320" y="88" font-size="17" fill="#222" text-anchor="middle" font-weight="bold">データへのアクセスを求めています</text>
+<rect x="120" y="140" width="190" height="46" rx="10" fill="#eef1f3"/>
+<text x="215" y="170" font-size="17" fill="#555" text-anchor="middle">許可しない</text>
+<rect x="330" y="140" width="190" height="46" rx="10" fill="#1f7aea" stroke="#ff7a00" stroke-width="5"/>
+<text x="425" y="170" font-size="18" fill="#fff" text-anchor="middle" font-weight="bold">許可</text>
+</svg>
+<figcaption>見本です。ことばは少しちがうことがあります。</figcaption>
+</figure>
+<div class="two">
+<div class="ok"><p><b>クリックしていいもの</b></p><p>許可 ／ 承認 ／ OK ／ はい<br>Allow ／ Approve ／ Yes</p></div>
+<div class="ng"><p><b>クリックしないもの</b></p><p>「削除」「上書き」「消去」と書いてある窓<br>Delete ／ Remove ／ Overwrite<br><span class="small">→ このときは「いいえ」「拒否」</span></p></div>
+</div>
+<p class="small">窓がたくさん出ても、こわくないですよ。Codexが「ここ見ていい？」と1つずつ聞いているだけです。</p>
+</section>
+
+<section>
+<h2><span class="n">5</span>Codexの返事を見る</h2>
+<p>Codexが、見つかったかどうかを教えてくれます。</p>
+
+<h3>A　見つかったとき</h3>
+<div class="do">デスクトップの青いフォルダ「復元候補」をダブルクリック</div>
+<figure class="mid">
+<svg viewBox="0 0 640 200" role="img" aria-label="デスクトップの復元候補フォルダ">
+<rect x="20" y="10" width="600" height="180" rx="12" fill="#7fb6e0"/>
+<rect x="20" y="10" width="600" height="24" rx="12" fill="#f5f5f5" opacity=".9"/>
+<text x="40" y="27" font-size="13" fill="#222"> ファイル　編集　表示</text>
+<g transform="translate(470,60)">
+<rect x="-6" y="-6" width="112" height="112" rx="10" fill="none" stroke="#ff7a00" stroke-width="4"/>
+<path d="M10 20 h28 l8 8 h44 v52 h-80z" fill="#3aa0f0"/><rect x="10" y="30" width="80" height="50" rx="4" fill="#5cb4f5"/>
+<text x="50" y="100" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">復元候補</text>
+</g>
+<text x="200" y="110" font-size="18" fill="#fff" text-anchor="middle" font-weight="bold">カチカチッ（ダブルクリック）→</text>
+</svg>
+<figcaption>デスクトップ＝Macの一番うしろの画面です。見えないときはQ7を見てください。</figcaption>
+</figure>
+<div class="do">中の資料（Codexが「一番それらしい」と言ったもの）をダブルクリック</div>
+<p>「復元しますか」と出たら <b>「復元」</b> をクリックしてください。</p>
+<p>資料が開いたら、<b>すぐに保存しましょう。</b></p>
+<div class="do">画面の一番上の「ファイル」→「保存」をクリック</div>
+<figure class="mid">
+<svg viewBox="0 0 640 220" role="img" aria-label="ファイルメニューから保存">
+<rect x="20" y="10" width="600" height="30" fill="#f5f5f5"/>
+<text x="62" y="31" font-size="15" fill="#222" font-weight="bold">Keynote</text>
+<rect x="140" y="12" width="70" height="26" rx="5" fill="#1f7aea"/><text x="175" y="31" font-size="15" fill="#fff" text-anchor="middle">ファイル</text>
+<text x="246" y="31" font-size="15" fill="#222">編集</text><text x="300" y="31" font-size="15" fill="#222">表示</text>
+<rect x="140" y="40" width="230" height="160" rx="8" fill="#fff" stroke="#c4ccd2"/>
+<text x="160" y="70" font-size="15" fill="#333">新規</text>
+<text x="160" y="100" font-size="15" fill="#333">開く…</text>
+<text x="160" y="130" font-size="15" fill="#333">閉じる</text>
+<rect x="148" y="142" width="214" height="30" rx="5" fill="#dbeeff" stroke="#ff7a00" stroke-width="3"/>
+<text x="160" y="163" font-size="15" fill="#222" font-weight="bold">保存…</text><text x="352" y="163" font-size="14" fill="#666" text-anchor="end">⌘S</text>
+<text x="500" y="160" font-size="16" fill="#c25a00" text-anchor="middle" font-weight="bold">← ここ</text>
+</svg>
+<figcaption>PowerPointでも同じ場所にあります。「保存」が見つからないときは、Codexに「保存のしかたを教えて」と聞いてみてください。</figcaption>
+</figure>
+<p>名前の欄に <b>セミナー資料</b> と打って、場所が「書類」か「デスクトップ」になっているのを見てから、<b>「保存」</b>をクリック。</p>
+<div class="ok"><p class="lead"><b>これでおしまいです。本当におつかれさまでした！</b></p><p class="small">とちゅうまでしか残っていなかったら、下の「B」の文で、続きをCodexに作ってもらえます。</p></div>
+
+<h3>B　見つからなかったとき</h3>
+<p>大丈夫、Codexに作り直してもらいましょう。下の文をコピーして、【　】のところに<b>思い出せることを、ことばだけでも</b>打ってみてください。</p>
+<div class="copybox">
+<div class="label">Codexにおくる文 その2（作り直して）</div>
+<pre id="p2">資料は見つからなかったので、作り直してください。明日のセミナーで使うスライドです。
+中学生にもわかる、やさしい日本語で答えてください。
+
+セミナーのこと
+・明日【　】時から、【　】分くらい
+・来る人：【だれが何人くらい】
+
+思い出せる中身（ことばだけ、順番ばらばらでもいいです）
+【ここに打つ】
+
+おねがい
+1. 1枚の文字は少なく、大きく、読みやすくしてください。
+2. KeynoteかPowerPointで開けるファイルにして、デスクトップに保存してください。
+3. できたら、開き方を1つずつ教えてください。
+4. 私がたしたほうがいいところがあれば、最後に教えてください。</pre>
+<button type="button" data-target="p2">この文をコピー</button>
+</div>
+<p class="small">はり方は手順3と同じです（下の白い欄をクリック → <kbd>⌘</kbd>＋<kbd>V</kbd> → 【　】を打つ → <kbd>return</kbd>）。【　】の中を打つときは、矢印を【　】のところに動かしてクリックしてから打ちます。</p>
+<p class="small">できた資料を直したいときは、Codexに「3枚目の文字をもっと大きくして」のように、話すように打てば直してくれますよ。</p>
+</section>
+
+<section id="genkai">
+<h2><span class="n">!</span>「利用上限に達しました」と出たら</h2>
+<p>使える量を使い切ると、Codexがこんなふうに止まります。<b>こわれたわけではないので、安心してくださいね。</b></p>
+<figure class="mid">
+<svg viewBox="0 0 640 250" role="img" aria-label="利用上限に達しましたの表示の見本">
+<rect x="70" y="16" width="500" height="220" rx="16" fill="#fff" stroke="#c4ccd2"/>
+<text x="320" y="62" font-size="20" fill="#222" text-anchor="middle" font-weight="bold">利用上限に達しました</text>
+<text x="320" y="96" font-size="15" fill="#555" text-anchor="middle">利用上限がリセットされたら、もう一度お試しください</text>
+<text x="320" y="124" font-size="14" fill="#1d6b3e" text-anchor="middle" font-weight="bold">（例：「午前3:15にリセット」のように時間が出ることも）</text>
+<rect x="110" y="160" width="200" height="46" rx="10" fill="#f6f6f6" stroke="#d9534f" stroke-width="3"/>
+<text x="210" y="189" font-size="16" fill="#999" text-anchor="middle">クレジットを購入</text>
+<line x1="120" y1="168" x2="300" y2="198" stroke="#d9534f" stroke-width="3"/>
+<rect x="330" y="160" width="200" height="46" rx="10" fill="#f6f6f6" stroke="#d9534f" stroke-width="3"/>
+<text x="430" y="189" font-size="16" fill="#999" text-anchor="middle">利用上限を増やす</text>
+<line x1="340" y1="168" x2="520" y2="198" stroke="#d9534f" stroke-width="3"/>
+</svg>
+<figcaption>見本です。ことばや見た目は少しちがうことがあります。</figcaption>
+</figure>
+<div class="ng"><p><b>お金がかかるボタンは、押さなくて大丈夫です</b></p><p>「クレジットを購入」「利用上限を増やす」「アップグレード」「利用上限のリセット」は押さないでおきましょう。</p></div>
+<p>そのときは、こうしてみてください。</p>
+<div class="do">① 書いてある<b>時間</b>を見る</div>
+<p>「◯時にリセット」と書いてあったら、その時間をすぎれば、また使えるようになります。（だいたい数時間で戻ります）</p>
+<div class="do">② 時間になったら、Codexに「つづきをお願いします」と打っておくる</div>
+<p>これまでのやりとりは、画面にちゃんと残っています。最初からやり直さなくて大丈夫です。</p>
+<div class="do">③ 待てないときは、ChatGPTのほうで作り直しを頼む</div>
+<p>インターネットのChatGPTは、Codexとは別に使えることが多いです。</p>
+<p>① <kbd>⌘</kbd>＋<kbd>スペース</kbd> → <b>safari</b> と打って <kbd>return</kbd>（方位磁石のマークが開きます）<br>② 上の細長い欄をクリックして <b>chatgpt.com</b> と打って <kbd>return</kbd><br>③ 下の欄に、手順5の<b>「その2（作り直して）」</b>の文をはって、おくる</p>
+<p class="small">ChatGPTが「ファイルを作りました」と言ったら、画面に出たファイルの名前をクリックすると、Macに保存（ダウンロード）されます。保存されたファイルは、Finder（青と白の顔のマーク）の「ダウンロード」の中にあります。</p>
+<p class="small">「あと少しで上限です」「上限に近づいています」と出たときも、同じ考え方です。大事なお願い（さがす・作り直す）を先にすませましょう。</p>
+</section>
+
+<section id="komatta">
+<h2>こまったとき</h2>
+<p class="lead"><b>どんなときも、まずこの文をCodexにおくってみてください。</b></p>
+<div class="copybox">
+<div class="label">こまったときの文（何回でも使えます）</div>
+<pre id="p3">わからなくなりました。
+いま、画面にはこう書いてあります：【画面に見えている文字を、そのまま打つ】
+つぎに私がやることを、1つだけ、中学生にもわかることばで教えてください。どこをクリックするかも教えてください。</pre>
+<button type="button" data-target="p3">この文をコピー</button>
+</div>
+<p>それでもわからないときは、もう一度この文をおくれば大丈夫です。Codexはいやがりませんよ。</p>
+
+<h3>よくあるこまりごと</h3>
+<details><summary>Q1　「codex」と打っても出てきません</summary><div class="a">
+<p>MacにCodexが入っていないのかもしれません。そのときは、インターネットのChatGPTで聞けます。</p>
+<p>① <kbd>⌘</kbd>＋<kbd>スペース</kbd> → <b>safari</b> と打って <kbd>return</kbd><br>② 上の細長い欄をクリックして <b>chatgpt.com</b> と打って <kbd>return</kbd><br>③ 下の欄に「こまったときの文」か「その2（作り直して）」をはって、おくる</p>
+<p class="small">ChatGPTはMacの中はさがせませんが、作り直しや、とり戻し方の説明はしてくれます。「Macで保存しないで閉じたKeynoteの資料をとり戻す方法を、1つずつ教えて」と聞いてみてください。</p>
+</div></details>
+<details><summary>Q2　⌘とスペースを押しても、さがす窓が出ません</summary><div class="a"><p><kbd>⌘</kbd>を<b>先に</b>押して、指をはなさずに<kbd>スペース</kbd>を押してみてください。同時だとうまくいかないことがあります。</p><p>それでもだめなら、画面の右上の<b>虫めがねのマーク</b>をクリックしても、同じ窓が出ます。</p></div></details>
+<details><summary>Q3　「ログイン」と出ました</summary><div class="a"><p>いつもChatGPTで使っているメールアドレスでログインします。「Googleで続ける」や「Appleで続ける」のボタンがあれば、それをクリックすると楽です。</p></div></details>
+<details><summary>Q4　思考量のボタンが見つかりません</summary><div class="a"><p>Codexに「思考量を『中』にしたいです。どこをクリックすればいいか教えてください」と聞いてみてください。見つからなくても、さがす作業はできるので大丈夫です。</p></div></details>
+<details><summary>Q5　Codexの返事が英語です／むずかしいです</summary><div class="a"><p>「日本語で、中学生にもわかるように言いなおしてください」と打っておくってみてください。</p></div></details>
+<details><summary>Q6　ずっと動いていて、終わりません</summary><div class="a"><p>文字が流れていたり、くるくる回るマークが出ていたら、ちゃんと動いています。10分たっても変わらなければ「まだですか？いまわかっていることだけ教えてください」とおくってみてください。</p></div></details>
+<details><summary>Q7　デスクトップが見えません</summary><div class="a"><p>画面の一番下にならんでいるアイコンから、<b>青と白の顔のマーク（Finder）</b>をクリック。左の列の<b>「デスクトップ」</b>をクリックすると、中に「復元候補」があります。</p></div></details>
+<details><summary>Q8　「削除していいですか」と聞かれました</summary><div class="a"><p><b>「いいえ」</b>で大丈夫です。Codexに「何も消さないでください」とおくってください。</p></div></details>
+<details><summary>Q9　パスワードを聞かれました</summary><div class="a"><p>灰色の小さな窓で聞かれたら、<b>いつもMacを開くときのパスワード</b>を入れます。<b>Codexの欄には、パスワードは打たないでくださいね。</b></p><p class="small">キーボードの右上の、指紋のボタンに指をのせるだけでいいこともあります。</p></div></details>
+<details><summary>Q10　「フルディスクアクセス」と言われました</summary><div class="a"><p>Codexに「フルディスクアクセスの入れ方を、1つずつ教えてください」とおくると、順番に教えてくれます。</p><p class="small">自分でやるときは：左上のりんごマーク → システム設定 → プライバシーとセキュリティ → フルディスクアクセス → Codexの横のスイッチをクリックして青くする。</p></div></details>
+<details><summary>Q11　候補がたくさんあって、どれかわかりません</summary><div class="a"><p>「一番新しくて、スライドが一番多いのはどれ？」と聞いてみてください。開くだけなら、何もこわれません。ちがったら閉じて、次を開けば大丈夫です。</p></div></details>
+<details><summary>Q12　とちゅうまでしか残っていませんでした</summary><div class="a"><p>まず手順5Aのとおり<b>保存</b>します。そのあとCodexに「この資料のつづきを作ってください。つづきの中身は【思い出せること】です」とおくってみてください。</p></div></details>
+<details><summary>Q13　ファイルが開けません</summary><div class="a"><p>Codexに「復元候補の資料が開けません。中の文字だけでも出せますか」とおくってみてください。</p></div></details>
+<details><summary>Q14　まちがえて、へんなところをクリックしたかも</summary><div class="a"><p>大丈夫です。最初の文で「消さないで」とたのんであります。Codexに「まちがえて何か押したかもしれません。大丈夫ですか」と聞いてみてください。</p></div></details>
+<details><summary>Q15　もうつかれました。今夜は最低限にしたいです</summary><div class="a"><p>「その1」をおくるだけおくって、寝てしまっても大丈夫です。Codexの返事は画面に残っています。Macのふたは<b>開けたまま</b>にしておいてくださいね。朝、つづきから読めばいいですよ。</p></div></details>
+<details><summary>Q16　次から、こうならないためには</summary><div class="a"><p>資料を作りはじめたら、<b>最初に1回だけ</b> <kbd>⌘</kbd>＋<kbd>S</kbd> を押して、名前をつけて保存します。そのあとは自動で保存され続けるので、閉じても消えなくなります。</p></div></details>
+</section>
+
+<footer>
+<p>このページは、何回見ても大丈夫です。<br>わからないことは、Codexがやさしく教えてくれます。<br>明日のセミナー、うまくいきますように。</p>
+</footer>
+
+</main>
+<script>
+document.querySelectorAll('.copybox button').forEach(function(b){
+  b.addEventListener('click',function(){
+    var t=document.getElementById(b.dataset.target).innerText;
+    function done(){var o=b.textContent;b.textContent='コピーしました。Codexにはってください';b.classList.add('done');setTimeout(function(){b.textContent=o;b.classList.remove('done')},5000)}
+    function fallback(){var a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();try{document.execCommand('copy');done()}catch(e){}document.body.removeChild(a)}
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(done,fallback)}else{fallback()}
+  });
+});
+</script>
+</body></html>
